@@ -1,7 +1,7 @@
-import '@/styles/globals.css';
+import "@/styles/globals.css";
 
-import Header from '@/components/layouts/Header';
-import Footer from '@/components/layouts/Footer';
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
 
 export default async function RootLayout({
   children,
@@ -11,12 +11,14 @@ export default async function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <div className="flex flex-col min-h-screen">
+        <div className="centered">
+          <div className="flex min-h-dvh w-full max-w-[1440px] flex-col">
             <Header />
-            <main className="flex-grow flex max-w-full flex-col py-12 px-28">
+            <main className="flex max-w-full flex-grow flex-col overflow-y-auto p-5">
               {children}
             </main>
             <Footer />
+          </div>
         </div>
       </body>
     </html>

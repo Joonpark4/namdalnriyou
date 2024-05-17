@@ -1,13 +1,16 @@
 import React from "react";
+import Logo from "./logo.jpg";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center xl:justify-between items-center max-w-full px-14 md:px-20 lg:px-32 xl:px-52 h-40 bg-slate-200">
+    <footer className="flex justify-between items-end w-full bg-muted p-10 ">
       <div>
-				<div className="text-xl hidden xl:block">LOGO</div>
-				<div className="text-sm hidden xl:block">COPYRIGHT C &#40;주&#41;OOO ALL RIGHTS RESERVED.</div>
+				<div className="text-xl hidden xl:block">
+          <Image src={Logo} alt="logo" />
+        </div>
 			</div>
-      <div className="footer_con_wrap">
+      <div>
         <div className="flex justify-center xl:justify-end text-sm py-1">
           <div className="mx-1">회사명: OOO</div>
           <div className="mx-1 hidden sm:block">대표자: OOO</div>
