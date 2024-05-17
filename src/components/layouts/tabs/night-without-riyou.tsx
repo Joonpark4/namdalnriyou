@@ -6,7 +6,7 @@ export const NightWithoutRiyou = () => {
         <span className="text-lg font-semibold">{"18:00 ~ 23:30"}</span>
       </div>
       <div className="flex justify-center gap-2 font-bold">
-        <span>밤에는</span>
+        <span>밤에는🌙</span>
         <span className=" text-3xl">이유 없는 밤</span>
       </div>
     </div>

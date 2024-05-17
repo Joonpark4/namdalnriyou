@@ -4,13 +4,13 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-between items-end w-full bg-muted p-10 ">
+    <footer className="flex justify-between items-end w-full bg-[#f6f6e8] p-10 text-black rounded-tr-xl rounded-tl-xl">
       <div>
 				<div className="text-xl hidden xl:block">
           <Image src={Logo} alt="logo" />
         </div>
 			</div>
-      <div>
+      <div className="flex flex-col">
         <div className="flex justify-center xl:justify-end text-sm py-1">
           <div className="mx-1">회사명: OOO</div>
           <div className="mx-1 hidden sm:block">대표자: OOO</div>
