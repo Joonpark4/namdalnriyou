@@ -1,6 +1,8 @@
-import { SwiperComponent } from "@/components/layouts/swiper";
-import Pic1 from "@/app/_assets/night1.jpeg"
-import Pic2 from "@/app/_assets/night3.jpeg"
+import dayPic1 from "@/../public/day1.jpeg";
+import dayPic2 from "@/../public/day2.jpeg";
+import dayPic3 from "@/../public/day3.jpeg";
+import nightPic1 from "@/../public/night1.jpeg";
+import nightPic3 from "@/../public/night3.jpeg";
 
 export const metadata = {
   title: "이유 없는 밤 - Night Without Riyou",
@@ -8,10 +10,5 @@ export const metadata = {
 };
 
 export default function Night() {
-  const images = [Pic1, Pic2]
-  return (
-    <div className="centered flex-col mt-4">
-      <SwiperComponent images={images} />
-    </div>
-  );
+  return <div></div>;
 }

@@ -3,6 +3,23 @@
 @tailwind utilities;
 @import "./keyframes.css";
 
+html {
+  /* phone: 0~480px */
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+
+  /* laptop: 481~1280px */
+  @media (min-width: 481px) and (max-width: 1280px) {
+    font-size: 14px;
+  }
+
+  /* desktop: 1280px 이상 */
+  @media (min-width: 1280px) {
+    font-size: 16px;
+  }
+}
+
 /* 아래는 다크모드 만들 때 매우 좋습니다. */
 @layer base {
   :root {
