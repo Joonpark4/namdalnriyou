@@ -8,10 +8,6 @@ export const metadata = {
 export default function Night() {
   return (
     <div className="flex flex-col items-center text-[#dadbd2]">
-      <TitleComponent
-        title1="교외의 따뜻한 조명 아래,"
-        title2="와인 바"
-      />
     </div>
   );
 }

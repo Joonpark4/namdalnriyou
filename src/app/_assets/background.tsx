@@ -41,7 +41,7 @@ export const BackgroundComponent = () => {
         }
         return newPic;
       });
-    }, 9000);
+    }, 10000);
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {
@@ -49,25 +49,25 @@ export const BackgroundComponent = () => {
     if (random === 0) {
       animate(
         ".BGImage",
-        { x: [-50, 0], opacity: [0, 1, 0] },
+        { x: [-50, 0], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else if (random === 1) {
       animate(
         ".BGImage",
-        { x: [0, -50], opacity: [0, 1, 0] },
+        { x: [0, -50], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else if (random === 2) {
       animate(
         ".BGImage",
-        { y: [-50, 0], opacity: [0, 1, 0] },
+        { y: [-50, 0], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else {
       animate(
         ".BGImage",
-        { y: [0, -50], opacity: [0, 1, 0] },
+        { y: [0, -50], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     }

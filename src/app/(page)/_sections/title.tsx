@@ -11,7 +11,12 @@ export const TitleComponent = ({
   title2: string;
 }) => {
   return (
-    <div className={cn("flex flex-wrap items-end gap-3", Yeon.className)}>
+    <div
+      className={cn(
+        "sticky top-5 flex items-end justify-center flex-wrap gap-3",
+        Yeon.className,
+      )}
+    >
       <span className="text-xl">{title1}</span>
       <span className="text-4xl">{title2}</span>
     </div>

@@ -36,10 +36,10 @@ const nightButtonArray = [
 ];
 
 export const HeroComponent = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { margin: "0px 0px -95% 0px" });
   const pathname = usePathname();
   const router = useRouter();
+  const ref = useRef(null);
+  const isInView = useInView(ref);
   useEffect(() => {
     if (isInView) {
       animate(
