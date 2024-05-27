@@ -1,8 +1,4 @@
-import dayPic1 from "@/../public/day1.jpeg";
-import dayPic2 from "@/../public/day2.jpeg";
-import dayPic3 from "@/../public/day3.jpeg";
-import nightPic1 from "@/../public/night1.jpeg";
-import nightPic3 from "@/../public/night3.jpeg";
+import { redirect } from "next/navigation";
 
 export const metadata = {
   title: "남다른 이유 - Namdalnriyou",
@@ -10,5 +6,5 @@ export const metadata = {
 };
 
 export default function Home() {
-  return <div></div>;
+  redirect("/day");
 }
