@@ -37,7 +37,7 @@ export const NavigationComponent = ({
     router.push("/night");
   };
   return (
-    <div className={cn("sticky top-0 flex w-full flex-col", Yeon.className)}>
+    <div className={cn(" z-20 sticky top-0 flex w-full flex-col", Yeon.className)}>
       <nav
         className={cn(
           "z-20 flex items-start",

@@ -5,8 +5,6 @@ export const metadata = {
 
 export default function Night() {
   return (
-    <div className="flex min-h-[100vh] flex-col items-center bg-[#262626]/[.96] text-[#dadbd2]">
-      
-    </div>
+    <div className="-translate-y-1 flex min-h-[100vh] flex-col items-center bg-[#262626]/[.96] text-[#dadbd2]"></div>
   );
 }

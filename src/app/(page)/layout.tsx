@@ -61,7 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <main
         className={cn(
-          "w-[90%] translate-x-[5%] rounded-xl duration-1000 md:w-[50%]",
+          "w-[90%] translate-x-[5%] duration-1000 md:w-[50%]",
           pathname === "/day" ? "md:translate-x-[95%]" : "md:translate-x-[5%]",
         )}
       >

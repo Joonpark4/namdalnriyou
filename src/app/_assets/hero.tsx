@@ -62,11 +62,11 @@ export const HeroComponent = () => {
   return (
     <div className="grid h-[85dvh] w-full grid-cols-2 text-4xl">
       <div className="topCheck absolute top-0 h-1 w-full" ref={ref}></div>
-      <div className=" centered col-span-2 p-10 md:col-span-1 md:p-4">
+      <div className=" centered col-span-2 p-6 sm:p-10 md:col-span-1 md:p-24">
         <Image
           src={pathname === "/day" ? dayLogo : nightLogo}
           alt="logo"
-          className="logoImage max-h-[400px] max-w-[400px] rounded-full p-6 sm:p-10 md:p-24"
+          className="logoImage max-h-[400px] max-w-[400px] rounded-full "
           style={{ opacity: 0 }}
         />
       </div>
