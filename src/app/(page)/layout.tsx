@@ -7,12 +7,18 @@ import nightLogo from "@/../public/logo2.png";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { animate, stagger, useInView } from "framer-motion";
-import { TitleComponent } from "./_sections/title";
+import { NavigationComponent } from "./_sections/nav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  // route가 변경될 경우 스크롤 위치를 맨 위로 부드럽게 이동
+  // useEffect(() => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // }, [pathname]);
+
   useEffect(() => {
     if (isInView) {
       animate(
@@ -33,28 +39,51 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="relative z-10 h-full">
-      <div className="SubLogoCheck absolute top-[85%] left-0 w-1 h-full" ref={ref}></div>
-      <div className="centered fixed w-[45%] top-1/4 z-20">
+      <div className="absolute top-0">
+        <div className="h-[70vh]"></div>
+        <div
+          className="SubLogoCheck sticky left-0 top-0 h-1 w-2"
+          ref={ref}
+        ></div>
+      </div>
+      <div
+        className={cn(
+          "centered fixed top-1/4 z-20 w-[45%]",
+          pathname === "/day" ? " " : "right-0",
+        )}
+      >
         <Image
           src={pathname === "/day" ? dayLogo : nightLogo}
           alt="logo"
-          className="SubLogo rounded-full w-2/4 hidden md:block"
+          className="SubLogo hidden w-2/4 rounded-full md:block"
+          style={{ opacity: 0 }}
         />
       </div>
       <main
         className={cn(
-          "min-h-[200%] w-[90%] translate-x-[5%] rounded-lg p-10 pt-5 duration-1000 md:w-[50%]",
-          pathname === "/day"
-            ? "bg-[#f6f6e8]/[.96] md:translate-x-[95%]"
-            : "bg-[#262626]/[.96] md:translate-x-[5%]",
+          "w-[90%] translate-x-[5%] rounded-xl duration-1000 md:w-[50%]",
+          pathname === "/day" ? "md:translate-x-[95%]" : "md:translate-x-[5%]",
         )}
       >
-      <TitleComponent
-        title1="푸른 산과 강이 만나는 곳에,"
-        title2="디저트 카페"
-      />
+        <NavigationComponent
+          title1={
+            pathname === "/day"
+              ? "푸른 산과 강이 만나는 곳에,"
+              : "교외의 따뜻한 조명 아래,"
+          }
+          title2={pathname === "/day" ? "디저트 카페" : "와인 바"}
+          hiddenName={
+            pathname === "/day"
+              ? "남다른 이유 - Namdalnriyou"
+              : "이유 없는 밤 - The Night without Riyou"
+          }
+        />
         {children}
       </main>
     </div>
   );
 }
+
+// pathname === "/day"
+//   ? "bg-[#f6f6e8]/[.96] md:translate-x-[95%]"
+//   : "bg-[#262626]/[.96] md:translate-x-[5%]",

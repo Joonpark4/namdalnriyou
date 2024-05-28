@@ -15,22 +15,23 @@ import { useEffect, useState } from "react";
 import { StaticImageData } from "next/image";
 import { animate, cubicBezier } from "framer-motion";
 
+const pictures = [
+  dayPic1,
+  dayPic2,
+  dayPic3,
+  dayPic4,
+  dayPic5,
+  dayPic6,
+  dayPic7,
+  nightPic1,
+  nightPic2,
+  nightPic3,
+  nightPic4,
+];
+
 export const BackgroundComponent = () => {
   const [picNow, setPicNow] = useState<StaticImageData>(dayPic1);
-  const pictures = [
-    dayPic1,
-    dayPic2,
-    dayPic3,
-    dayPic4,
-    dayPic5,
-    dayPic6,
-    dayPic7,
-    nightPic1,
-    nightPic2,
-    nightPic3,
-    nightPic4,
-  ];
-  // 5초마다 이미지 변경
+  // 애니메이션의 재생, 정지 등 컨트롤을 위한 변수
   useEffect(() => {
     const interval = setInterval(() => {
       // 이전에 보여준 이미지는 제외
@@ -46,41 +47,44 @@ export const BackgroundComponent = () => {
   }, []);
   useEffect(() => {
     const random = Math.floor(Math.random() * 4);
+    let ani: any;
     if (random === 0) {
-      animate(
+      ani = animate(
         ".BGImage",
-        { x: [-50, 0], opacity: [0, 1, 0.1] },
+        { x: [-40, 0], y: [0], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else if (random === 1) {
-      animate(
+      ani = animate(
         ".BGImage",
-        { x: [0, -50], opacity: [0, 1, 0.1] },
+        { x: [0, -40], y: [0], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else if (random === 2) {
-      animate(
+      ani = animate(
         ".BGImage",
-        { y: [-50, 0], opacity: [0, 1, 0.1] },
+        { x: [0], y: [0, -40], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else {
-      animate(
+      ani = animate(
         ".BGImage",
-        { y: [0, -50], opacity: [0, 1, 0.1] },
+        { x: [0], y: [-40, 0], opacity: [0, 1, 0.1] },
         { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     }
+
+    return () => ani.cancel();
   }, [picNow]);
   return (
-    <div className="absolute left-0 top-0 z-10 h-full w-full overflow-hidden bg-black">
-      <div className="BGImage h-[105%] w-[105%]">
+    <div className="fixed left-0 top-0 z-10 h-full w-full bg-black">
+      <div className="BGImage h-[110%] w-[110%]">
         <Image
           src={picNow}
           alt="day1"
           layout="fill"
           objectFit="cover"
-          className="sepia-[0.1] brightness-75"
+          className="brightness-75 sepia-[0.1]"
         />
       </div>
     </div>

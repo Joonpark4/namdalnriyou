@@ -40,6 +40,7 @@ export const HeroComponent = () => {
   const router = useRouter();
   const ref = useRef(null);
   const isInView = useInView(ref);
+
   useEffect(() => {
     if (isInView) {
       animate(
@@ -48,24 +49,24 @@ export const HeroComponent = () => {
         { delay: 0.2, duration: 0.6 },
       );
       animate(
-        "button",
+        ".heroButton",
         { y: [20, 0], opacity: [0, 1] },
         { delay: stagger(0.1, { startDelay: 0.4 }), duration: 0.6 },
       );
     } else {
       animate(".logoImage", { y: 20, opacity: 0 }, { duration: 0.6 });
-      animate("button", { y: 20, opacity: 0 }, { duration: 0.6 });
+      animate(".heroButton", { y: 20, opacity: 0 }, { duration: 0.6 });
     }
   }, [isInView, pathname]);
 
   return (
-    <div className="grid h-[90dvh] w-full grid-cols-2 text-4xl">
+    <div className="grid h-[85dvh] w-full grid-cols-2 text-4xl">
       <div className="topCheck absolute top-0 h-1 w-full" ref={ref}></div>
       <div className=" centered col-span-2 p-10 md:col-span-1 md:p-4">
         <Image
           src={pathname === "/day" ? dayLogo : nightLogo}
           alt="logo"
-          className="logoImage rounded-full p-6 sm:p-10 md:p-24"
+          className="logoImage max-h-[400px] max-w-[400px] rounded-full p-6 sm:p-10 md:p-24"
           style={{ opacity: 0 }}
         />
       </div>
@@ -84,7 +85,10 @@ export const HeroComponent = () => {
                 <Button
                   key={index}
                   variant={"secondary"}
-                  className="px-4 py-6 text-2xl xl:text-3xl"
+                  className={cn(
+                    "heroButton px-4 py-6 text-2xl xl:text-3xl",
+                    !isInView && "pointer-events-none",
+                  )}
                   style={{ opacity: 0 }}
                   onClick={() => router.push(`/${button}`)}
                 >
@@ -95,7 +99,10 @@ export const HeroComponent = () => {
                 <Button
                   key={index}
                   variant={"secondary"}
-                  className="px-4 py-6 text-2xl xl:text-4xl"
+                  className={cn(
+                    "heroButton px-4 py-6 text-2xl xl:text-3xl",
+                    !isInView && "pointer-events-none",
+                  )}
                   style={{ opacity: 0 }}
                   onClick={() => router.push(`/${button}`)}
                 >

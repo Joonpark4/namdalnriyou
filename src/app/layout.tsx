@@ -15,10 +15,10 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className={`${Noto.className}`}>
-        <div className="relative flex h-dvh w-screen flex-col overflow-hidden">
+      <body className={`${Noto.className} overflow-x-hidden`}>
+        <div className="relative flex w-screen flex-col">
           <BackgroundComponent />
-          <div className="relative z-10 h-full w-full overflow-y-auto">
+          <div className="relative z-10 w-full">
             <HeroComponent />
             {children}
           </div>
