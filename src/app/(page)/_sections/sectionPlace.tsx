@@ -28,7 +28,7 @@ export const SectionPlaceComponent = () => {
         </div>
         <div className="space-y-1">
           <h4 className="text-lg font-semibold">
-            벚꽃 길과 함께 즐기는 강변 앞의 리버뷰
+            벚꽃 길과 함께 즐기는 남강 앞의 리버뷰
           </h4>
           <p>
             봄이면 벚꽃이 만개하는 길을 따라 걷다 보면, 어느새 강변 앞에 자리한
