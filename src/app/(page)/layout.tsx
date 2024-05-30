@@ -39,7 +39,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="relative z-10 h-full">
-      <div className="absolute top-0">
+      <div className="absolute top-0 h-full">
         <div className="h-[70vh]"></div>
         <div
           className="SubLogoCheck sticky left-0 top-0 h-1 w-2"

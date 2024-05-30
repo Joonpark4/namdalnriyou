@@ -11,7 +11,7 @@ export const SectionCoffeeComponent = () => {
         title2="The Tasty Coffee"
       />
       <div className="flex flex-col gap-4">
-        <div className="grid grid-cols-2 h-[250px] w-full gap-4">
+        <div className="grid grid-cols-2 max-h-[250px] w-full gap-4">
           <Image
             src={coffeePic1}
             alt="coffee"

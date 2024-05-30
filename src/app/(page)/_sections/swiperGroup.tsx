@@ -5,7 +5,7 @@ import "swiper/css";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
-export const SwiperGroupComponent = ({ Images }: { Images: StaticImageData[] }) =>
+export const SwiperGroupComponent = ({ Images, height }: { Images: StaticImageData[], height?:number }) =>
   {
     return (
       <Swiper
@@ -18,7 +18,7 @@ export const SwiperGroupComponent = ({ Images }: { Images: StaticImageData[] }) 
           disableOnInteraction: false,
         }}
         speed={5000}
-        className="mySwiper h-[300px] w-full"
+        className={`mySwiper h-[${height? height : '300'}px] w-full`}
         modules={[Autoplay]}
       >
         {Images?.map((image, index) => (

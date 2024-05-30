@@ -1,4 +1,3 @@
-
 export interface ModalTopProps {
   title: string;
   subtitle?: string;

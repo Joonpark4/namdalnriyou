@@ -15,20 +15,15 @@ const Yeon = Yeon_Sung({ weight: "400", subsets: ["latin"], display: "swap" });
 const dayButtonArray = [
   "공간",
   "커피",
-  "에이드/차",
-  "밀크티",
   "마카롱",
-  "디저트",
   "지역 상생",
   "SNS",
   "찾아 오는 길",
 ];
 
 const nightButtonArray = [
-  "공간",
   "와인",
   "수제 맥주",
-  "하이볼/칵테일",
   "식사/안주",
   "지역 상생",
   "SNS",
@@ -61,7 +56,7 @@ export const HeroComponent = () => {
 
   return (
     <div className="grid h-[85dvh] w-full grid-cols-2 text-4xl">
-      <div className="topCheck absolute top-0 h-1 w-full" ref={ref}></div>
+      <div className="topCheck absolute top-0 h-5 w-full" ref={ref}></div>
       <div className=" centered col-span-2 p-6 sm:p-10 md:col-span-1 md:p-24">
         <Image
           src={pathname === "/day" ? dayLogo : nightLogo}
