@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const SectionMacaronComponent = () => {
   return (
-    <div className="flex w-full flex-col gap-5 py-7">
+    <div className="flex w-full flex-col gap-5 py-9">
       <SectionTitleGroupComponent
         title1="산청 대표 마카롱"
         title2="Sancheong Macaron"

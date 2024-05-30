@@ -9,16 +9,14 @@ import snsPic6 from "@/../public/sns6.jpeg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+// TODO: SNS 아이콘과 함께 계정명 표시
 export const SectionSNSComponent = () => {
   const snsPics = [snsPic1, snsPic2, snsPic3, snsPic4, snsPic5, snsPic6];
   return (
-    <div className="flex w-full flex-col gap-5 py-7">
-      <SectionTitleGroupComponent
-        title1="SNS"
-        title2="Instagram"
-      />
+    <div className="flex w-full flex-col gap-5 py-9">
+      <SectionTitleGroupComponent title1="SNS" title2="Instagram" />
       <div className="flex flex-col gap-2">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
           {snsPics.map((pic, index) => (
             <Image
               key={index}
@@ -28,7 +26,11 @@ export const SectionSNSComponent = () => {
             />
           ))}
         </div>
-        <div className="flex justify-end"><Link href={"https://www.instagram.com/namdalnriyou/"}><Button>인스타그램 더보기</Button></Link></div>
+        <div className="flex justify-end">
+          <Link href={"https://www.instagram.com/namdalnriyou/"}>
+            <Button>인스타그램 더보기</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import coffeePic2 from "@/../public/coffee2.jpeg";
 
 export const SectionCoffeeComponent = () => {
   return (
-    <div className="flex w-full flex-col gap-5 py-7">
+    <div className="flex w-full flex-col gap-5 py-9">
       <SectionTitleGroupComponent
         title1="맛있는 커피"
         title2="The Tasty Coffee"
