@@ -1,6 +1,9 @@
 import { SectionCoffeeComponent } from "../_sections/sectionCoffee";
+import { SectionCommunityComponent } from "../_sections/sectionCommunity";
+import { SectionLocationComponent } from "../_sections/sectionLocation";
 import { SectionMacaronComponent } from "../_sections/sectionMacaron";
 import { SectionPlaceComponent } from "../_sections/sectionPlace";
+import { SectionSNSComponent } from "../_sections/sectionSNS";
 
 export const metadata = {
   title: "남다른 이유 - Namdalnriyou",
@@ -9,10 +12,13 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex gap-12 min-h-[100vh] -translate-y-1 flex-col items-center bg-[#f6f6e8]/[.96] text-[#291e14] p-3 lg:p-5 xl:p-8">
+    <div className="flex min-h-[100vh] -translate-y-1 flex-col items-center bg-[#f6f6e8]/[.96] text-[#291e14] p-3 lg:p-5 xl:p-8">
       <SectionPlaceComponent />
       <SectionCoffeeComponent />
       <SectionMacaronComponent />
+      <SectionCommunityComponent />
+      <SectionSNSComponent />
+      <SectionLocationComponent />
     </div>
   );
 }
