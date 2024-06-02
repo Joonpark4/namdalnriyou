@@ -16,6 +16,11 @@ declare global {
   }
 }
 
+export const metadata = {
+  name: "google-site-verification",
+  content: "QDwWdGgwI6aDPDqw3ea1jpBkL5QEygI_Bt_aN888_z8",
+};
+
 export default async function RootLayout({
   children,
 }: {
