@@ -23,9 +23,9 @@ export default async function RootLayout({
   return (
     <html lang="ko">
       <body className={`${Noto.className} overflow-x-hidden`}>
-        <div className="relative flex w-screen flex-col">
+        <div className="relative flex w-screen flex-col items-center">
           <BackgroundComponent />
-          <div className="relative z-10 w-full">
+          <div className="relative z-10 w-full max-w-[1600px]">
             <HeroComponent />
             {children}
           </div>

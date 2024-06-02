@@ -6,30 +6,30 @@ import Image from "next/image";
 
 export const SectionMacaronComponent = () => {
   return (
-    <div className="flex w-full flex-col gap-5 py-9">
+    <div className="flex w-full flex-col gap-5">
       <SectionTitleGroupComponent
         title1="산청 대표 마카롱"
         title2="Sancheong Macaron"
       />
       <div className="flex flex-col gap-4">
-        <div className="grid max-h-[200px] w-full grid-cols-3 gap-4 overflow-hidden">
+        <div className="grid w-full grid-cols-3 gap-4 overflow-hidden">
           <Image
             src={MacaronPic1}
             alt="Macaron1"
             height={200}
-            className="h-full w-full object-fill"
+            className="aspect-square w-full object-fill"
           />
           <Image
             src={MacaronPic2}
             alt="Macaron2"
             height={200}
-            className="h-full w-full object-fill"
+            className="aspect-square w-full object-fill"
           />
           <Image
             src={MacaronPic3}
             alt="Macaron3"
             height={200}
-            className="h-full w-full object-fill"
+            className="aspect-square w-full object-fill"
           />
         </div>
         <div className="space-y-1">

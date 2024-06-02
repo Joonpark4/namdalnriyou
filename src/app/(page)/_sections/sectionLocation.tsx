@@ -25,8 +25,11 @@ export const SectionLocationComponent = () => {
   };
 
   return (
-    <div className="flex w-full flex-col gap-5 py-9">
-      <SectionTitleGroupComponent title1="찾아오시는길" title2="Location" />
+    <div className="flex w-full flex-col gap-5">
+      <SectionTitleGroupComponent
+        title1="찾아오시는 길"
+        title2="The Location"
+      />
       <div className="relative flex flex-col gap-2">
         <div className="flex flex-col gap-2">
           <div id="map" style={{ width: "100%", height: "300px" }}></div>
@@ -43,6 +46,7 @@ export const SectionLocationComponent = () => {
             href={
               "https://map.naver.com/p/entry/place/1980392936?c=15.00,0,0,0,dh"
             }
+            target="_blank"
           >
             <Button>네이버 지도에서 찾기</Button>
           </Link>

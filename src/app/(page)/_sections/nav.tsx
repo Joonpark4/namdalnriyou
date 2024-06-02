@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Yeon_Sung } from "next/font/google";
-import { useLayoutEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
 const Yeon = Yeon_Sung({ weight: "400", subsets: ["latin"], display: "swap" });
@@ -15,25 +14,15 @@ export const NavigationComponent = ({
   title2: string;
   hiddenName: string;
 }) => {
-  const [isDaySelected, setIsDaySelected] = useState<boolean | null>(null);
   const router = useRouter();
   const pathname = usePathname();
-  useLayoutEffect(() => {
-    if (pathname === "/day") {
-      setIsDaySelected(true);
-    } else if (pathname === "/night") {
-      setIsDaySelected(false);
-    }
-  }, [pathname]);
 
   const handleDayClick = () => {
     if (pathname === "/day") return;
-    setIsDaySelected(true);
     router.push("/day");
   };
   const handleNightClick = () => {
     if (pathname === "/night") return;
-    setIsDaySelected(false);
     router.push("/night");
   };
   return (
@@ -41,7 +30,7 @@ export const NavigationComponent = ({
       <nav
         className={cn(
           "z-20 flex items-start",
-          pathname === "/day" ? " bg-[#f6f6e8]" : "bg-[#262626]",
+          pathname === "/day" ? " bg-[#f6f6e8]" : "bg-[#696969]",
         )}
       >
         <button
@@ -55,7 +44,7 @@ export const NavigationComponent = ({
         </button>
         <button
           className={cn(
-            "centered h-full w-full origin-top-right rounded-b-lg bg-[#696969] p-1 text-[#dadbd2] shadow-md",
+            "centered h-full w-full origin-top-right rounded-b-lg bg-[#262626] p-1 text-[#dadbd2] shadow-md",
             pathname === "/night" ? "z-30 scale-110 text-3xl" : "text-2xl",
           )}
           onClick={handleNightClick}
@@ -68,7 +57,7 @@ export const NavigationComponent = ({
           "flex w-full flex-wrap items-end justify-center gap-3 py-4",
           pathname === "/day"
             ? "bg-[#f6f6e8] text-[#291e14]"
-            : "bg-[#262626] text-[#dadbd2]",
+            : "bg-[#696969] text-[#dadbd2]",
           Yeon.className,
         )}
       >

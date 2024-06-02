@@ -5,22 +5,22 @@ import coffeePic2 from "@/../public/coffee2.jpeg";
 
 export const SectionCoffeeComponent = () => {
   return (
-    <div className="flex w-full flex-col gap-5 py-9">
+    <div className="flex w-full flex-col gap-5">
       <SectionTitleGroupComponent
         title1="맛있는 커피"
         title2="The Tasty Coffee"
       />
       <div className="flex flex-col gap-4">
-        <div className="grid max-h-[250px] w-full grid-cols-2 gap-4">
+        <div className="grid w-full grid-cols-2 gap-4">
           <Image
             src={coffeePic1}
             alt="coffee"
-            className="h-full w-full object-fill"
+            className="aspect-square max-h-[300px] w-full object-fill"
           />
           <Image
             src={coffeePic2}
             alt="coffee"
-            className="h-full w-full object-fill"
+            className="aspect-square max-h-[300px] w-full object-fill"
           />
         </div>
         <div className="space-y-1">

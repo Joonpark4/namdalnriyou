@@ -10,7 +10,7 @@ import roomPic6 from "@/../public/room6.jpeg";
 export const SectionPlaceComponent = () => {
   const roomPics = [roomPic1, roomPic2, roomPic3, roomPic4, roomPic5, roomPic6];
   return (
-    <div className="flex w-full flex-col gap-5 py-9">
+    <div className="flex w-full flex-col gap-5">
       <SectionTitleGroupComponent title1="공간" title2="The Place" />
       <div className="flex flex-col gap-4">
         <SwiperGroupComponent Images={roomPics} />

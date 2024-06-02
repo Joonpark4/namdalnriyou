@@ -9,16 +9,16 @@ import eventPic4 from "@/../public/event4.jpg";
 export const SectionCommunityComponent = () => {
   const EventPics = [eventPic1, eventPic2, eventPic3, eventPic4];
   return (
-    <div className="flex w-full flex-col gap-5 py-9">
+    <div className="flex w-full flex-col gap-5">
       <SectionTitleGroupComponent
         title1="지역 상생"
         title2="Sanchung Community"
       />
       <div className="flex flex-col gap-4">
-        <SwiperGroupComponent Images={EventPics} height={250} perView={1} />
+        <SwiperGroupComponent Images={EventPics} perView={1} />
         <div className="space-y-1">
           <h4 className="text-lg font-semibold">
-            지역 사회와 함께 성장하는 카페
+            지역 사회와 함께 성장하는 곳
           </h4>
           <p>
             우리 카페는 지역 주민들과의 소통과 협력을 통해 상생의 가치를

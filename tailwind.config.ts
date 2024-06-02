@@ -94,7 +94,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    plugin(function ({ addComponents }) {
+    plugin(function ({ addComponents, addUtilities }) {
       addComponents({
         ".centered": {
           display: "flex",
@@ -102,6 +102,20 @@ module.exports = {
           justifyContent: "center",
         },
       });
+      const newUtilities = {
+        ".writing-mode-vertical-rl": {
+          "writing-mode": "vertical-rl",
+          "text-orientation": "upright",
+        },
+        ".writing-mode-vertical-lr": {
+          "writing-mode": "vertical-lr",
+          "text-orientation": "upright",
+        },
+        ".clip-sub-menu": {
+          "clip-path": "polygon(0 7%, 100% 0%, 100% 93%, 0% 100%)",
+        },
+      };
+      addUtilities(newUtilities);
     }),
   ],
 };

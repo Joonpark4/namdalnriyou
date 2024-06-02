@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 export const SectionSNSComponent = () => {
   const snsPics = [snsPic1, snsPic2, snsPic3, snsPic4, snsPic5, snsPic6];
   return (
-    <div className="flex w-full flex-col gap-5 py-9">
+    <div className="flex w-full flex-col gap-5">
       <SectionTitleGroupComponent title1="SNS" title2="Instagram" />
       <div className="flex flex-col gap-2">
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
@@ -22,7 +22,7 @@ export const SectionSNSComponent = () => {
               key={index}
               src={pic}
               alt={`sns${index + 1}`}
-              className="h-full max-h-[150px] w-full object-fill"
+              className=" aspect-square"
             />
           ))}
         </div>

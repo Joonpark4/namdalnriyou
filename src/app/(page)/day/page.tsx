@@ -12,12 +12,18 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div className="flex min-h-[100vh] -translate-y-1 flex-col items-center bg-[#f6f6e8]/[.96] text-[#291e14] p-3 lg:p-5 xl:p-8">
+    <div className="flex min-h-[100vh] -translate-y-1 flex-col items-center gap-6 bg-[#f6f6e8]/[.96] p-3 text-[#291e14] lg:p-5 xl:p-8">
+      <div id="1" className="-translate-y-28"></div>
       <SectionPlaceComponent />
+      <div id="2" className="-translate-y-28"></div>
       <SectionCoffeeComponent />
+      <div id="3" className="-translate-y-28"></div>
       <SectionMacaronComponent />
+      <div id="4" className="-translate-y-28"></div>
       <SectionCommunityComponent />
+      <div id="5" className="-translate-y-28"></div>
       <SectionSNSComponent />
+      <div id="6" className="-translate-y-28"></div>
       <SectionLocationComponent />
     </div>
   );

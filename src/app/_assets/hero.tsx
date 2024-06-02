@@ -12,22 +12,22 @@ import { Yeon_Sung } from "next/font/google";
 
 const Yeon = Yeon_Sung({ weight: "400", subsets: ["latin"], display: "swap" });
 
-const dayButtonArray = [
+export const dayButtonArray = [
   "공간",
   "커피",
   "마카롱",
   "지역 상생",
   "SNS",
-  "찾아 오는 길",
+  "찾아오시는 길",
 ];
 
-const nightButtonArray = [
+export const nightButtonArray = [
   "와인",
   "수제 맥주",
   "식사/안주",
   "지역 상생",
   "SNS",
-  "찾아 오는 길",
+  "찾아오시는 길",
 ];
 
 export const HeroComponent = () => {
@@ -35,6 +35,11 @@ export const HeroComponent = () => {
   const router = useRouter();
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const scrollToSection = (section: number) => {
+    const target = document.getElementById(`${section}`);
+    target?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     if (isInView) {
@@ -81,11 +86,11 @@ export const HeroComponent = () => {
                   key={index}
                   variant={"secondary"}
                   className={cn(
-                    "heroButton px-4 py-6 text-2xl xl:text-3xl",
+                    "heroButton px-4 py-6 text-2xl hover:bg-[#262626] hover:text-[#dadbd2] xl:text-3xl",
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
-                  onClick={() => router.push(`/${button}`)}
+                  onClick={() => scrollToSection(index + 1)}
                 >
                   {button}
                 </Button>
@@ -95,11 +100,11 @@ export const HeroComponent = () => {
                   key={index}
                   variant={"secondary"}
                   className={cn(
-                    "heroButton px-4 py-6 text-2xl xl:text-3xl",
+                    "heroButton px-4 py-6 text-2xl xl:text-3xl hover:bg-[#f6f6e8] hover:text-[#2a1e14]",
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
-                  onClick={() => router.push(`/${button}`)}
+                  onClick={() => scrollToSection(index + 1)}
                 >
                   {button}
                 </Button>

@@ -13,7 +13,7 @@ export const SectionTitleGroupComponent = ({
   return (
     <div
       className={cn(
-        "p-1 gap-1",
+        "p-1 gap-1 rounded-sm",
         pathname === "/day"
           ? "bg-[#262626] text-[#dadbd2]"
           : "bg-[#f6f6e8] text-[#291e14]",

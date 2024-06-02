@@ -7,11 +7,9 @@ import { StaticImageData } from "next/image";
 
 export const SwiperGroupComponent = ({
   Images,
-  height,
   perView,
 }: {
   Images: StaticImageData[];
-  height?: number;
   perView?: number;
 }) => {
   return (
@@ -25,7 +23,7 @@ export const SwiperGroupComponent = ({
         disableOnInteraction: false,
       }}
       speed={5000}
-      className={`mySwiper h-[300px] w-full`}
+      className={`mySwiper h-[400px] w-full`}
       modules={[Autoplay]}
     >
       {Images?.map((image, index) => (
@@ -33,7 +31,7 @@ export const SwiperGroupComponent = ({
           <Image
             src={image}
             alt={`the picture about ${index}`}
-            className={` h-[300px] w-full object-cover`}
+            className={` h-[400px] w-full object-cover`}
           />
         </SwiperSlide>
       ))}
