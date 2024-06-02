@@ -1,8 +1,9 @@
 import "@/styles/globals.css";
-import Script from "next/script";
 import { Noto_Sans_KR } from "next/font/google";
 import { BackgroundComponent } from "@/app/_assets/background";
 import { HeroComponent } from "./_assets/hero";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const Noto = Noto_Sans_KR({
   subsets: ["latin"],
@@ -30,6 +31,8 @@ export default async function RootLayout({
             {children}
           </div>
         </div>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
