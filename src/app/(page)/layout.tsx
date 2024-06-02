@@ -18,10 +18,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  // route가 변경될 경우 스크롤 위치를 맨 위로 부드럽게 이동
-  // useEffect(() => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // }, [pathname]);
 
   const scrollToSection = (section: number) => {
     const target = document.getElementById(`${section}`);
@@ -58,19 +54,34 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div
         className={cn(
           "centered fixed left-0 top-1/4 z-20 w-[50%] flex-col gap-6",
-          pathname === "/day" ? " " : " left-auto right-0",
+          pathname === "/night" ? "left-auto right-0" : "",
           !isInView && "pointer-events-none",
         )}
       >
         <Image
-          src={pathname === "/day" ? dayLogo : nightLogo}
+          src={pathname === "/night" ? nightLogo : dayLogo}
           alt="logo"
           className="SubLogo hidden aspect-square w-3/5 max-w-[500px] rounded-full md:block"
           style={{ opacity: 0 }}
         />
         <div className="flex gap-4">
-          {pathname === "/day"
-            ? dayButtonArray.map((button, index) => (
+          {pathname === "/night"
+            ? nightButtonArray.map((button, index) => (
+                <button
+                  key={index}
+                  className={cn(
+                    "SubButton writing-mode-vertical-lr clip-sub-menu centered hidden bg-[#262626] px-1 py-5 text-lg text-[#dadbd2] shadow-md hover:bg-[#f6f6e8] hover:text-[#291e14]",
+                    pathname === "/night" ? "md:block" : "",
+                    Yeon.className,
+                    !isInView && "pointer-events-none",
+                  )}
+                  style={{ opacity: 0 }}
+                  onClick={() => scrollToSection(index + 1)}
+                >
+                  {button}
+                </button>
+              ))
+            : dayButtonArray.map((button, index) => (
                 <button
                   key={index}
                   className={cn(
@@ -86,41 +97,26 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 >
                   {button}
                 </button>
-              ))
-            : nightButtonArray.map((button, index) => (
-                <button
-                  key={index}
-                  className={cn(
-                    "SubButton writing-mode-vertical-lr clip-sub-menu centered hidden bg-[#262626] px-1 py-5 text-lg text-[#dadbd2] shadow-md hover:bg-[#f6f6e8] hover:text-[#291e14]",
-                    pathname === "/night" ? "md:block" : "",
-                    Yeon.className,
-                    !isInView && "pointer-events-none",
-                  )}
-                  style={{ opacity: 0 }}
-                  onClick={() => scrollToSection(index + 1)}
-                >
-                  {button}
-                </button>
               ))}
         </div>
       </div>
       <main
         className={cn(
           "w-[90%] translate-x-[5%] tracking-[-0.01em] duration-1000 md:w-[49%]",
-          pathname === "/day" ? "md:translate-x-[95%]" : "md:translate-x-[5%]",
+          pathname === "/night" ? "md:translate-x-[5%]" : "md:translate-x-[95%]",
         )}
       >
         <NavigationComponent
           title1={
-            pathname === "/day"
-              ? "푸른 산과 강이 만나는 곳에,"
-              : "교외의 따뜻한 조명 아래,"
+            pathname === "/night"
+              ? "교외의 따뜻한 조명 아래,"
+              : "푸른 산과 강이 만나는 곳에,"
           }
-          title2={pathname === "/day" ? "디저트 카페" : "와인 바"}
+          title2={pathname === "/night" ? "와인 바" : "디저트 카페"}
           hiddenName={
-            pathname === "/day"
-              ? "남다른 이유 - Namdalnriyou"
-              : "이유 없는 밤 - The Night without Riyou"
+            pathname === "/night"
+              ? "이유 없는 밤 - The Night without Riyou"
+              : "남다른 이유 - Namdalnriyou"
           }
         />
         {children}
@@ -128,7 +124,3 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
-
-// pathname === "/day"
-//   ? "bg-[#f6f6e8]/[.96] md:translate-x-[95%]"
-//   : "bg-[#262626]/[.96] md:translate-x-[5%]",

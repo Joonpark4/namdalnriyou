@@ -64,7 +64,7 @@ export const HeroComponent = () => {
       <div className="topCheck absolute top-0 h-5 w-full" ref={ref}></div>
       <div className=" centered col-span-2 p-6 sm:p-10 md:col-span-1 md:p-24">
         <Image
-          src={pathname === "/day" ? dayLogo : nightLogo}
+          src={pathname === "/night" ? nightLogo : dayLogo}
           alt="logo"
           className="logoImage max-h-[400px] max-w-[400px] rounded-full "
           style={{ opacity: 0 }}
@@ -75,18 +75,18 @@ export const HeroComponent = () => {
           className={cn(
             "centered max-w-[90%] flex-wrap gap-5 md:max-w-[70%]",
             Yeon.className,
-            pathname === "/day"
-              ? "*:bg-[#f6f6e8] *:text-[#2a1e14]"
-              : "*:bg-[#262626] *:text-[#dadbd2]",
+            pathname === "/night"
+              ? "*:bg-[#262626] *:text-[#dadbd2]"
+              : "*:bg-[#f6f6e8] *:text-[#2a1e14]",
           )}
         >
-          {pathname === "/day"
-            ? dayButtonArray.map((button, index) => (
+          {pathname === "/night"
+            ? nightButtonArray.map((button, index) => (
                 <Button
                   key={index}
                   variant={"secondary"}
                   className={cn(
-                    "heroButton px-4 py-6 text-2xl hover:bg-[#262626] hover:text-[#dadbd2] xl:text-3xl",
+                    "heroButton px-4 py-6 text-2xl hover:bg-[#f6f6e8] hover:text-[#2a1e14] xl:text-3xl",
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
@@ -95,12 +95,12 @@ export const HeroComponent = () => {
                   {button}
                 </Button>
               ))
-            : nightButtonArray.map((button, index) => (
+            : dayButtonArray.map((button, index) => (
                 <Button
                   key={index}
                   variant={"secondary"}
                   className={cn(
-                    "heroButton px-4 py-6 text-2xl xl:text-3xl hover:bg-[#f6f6e8] hover:text-[#2a1e14]",
+                    "heroButton px-4 py-6 text-2xl hover:bg-[#262626] hover:text-[#dadbd2] xl:text-3xl",
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
