@@ -4,7 +4,7 @@ import { BackgroundComponent } from "@/app/_assets/background";
 import { HeroComponent } from "./_assets/hero";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { GoogleTagManager  } from "@next/third-parties/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const Noto = Noto_Sans_KR({
   subsets: ["latin"],
@@ -36,6 +36,7 @@ export default async function RootLayout({
         <Analytics />
       </body>
       <GoogleTagManager gtmId="GTM-NP8JHXJW" />
+      <GoogleTagManager gtmId="AW-16458714781" />
     </html>
   );
 }
