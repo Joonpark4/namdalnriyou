@@ -8,6 +8,48 @@ import { SectionWineComponent } from "../_sections/sectionWine";
 export const metadata = {
   title: "이유 없는 밤 - The Night without Riyou",
   description: "분위기 좋은 남강뷰에서 수제 맥주와 와인을 즐기는 곳",
+  openGraph: {
+    title: "이유 없는 밤 - The Night without Riyou",
+    description: "분위기 좋은 남강뷰에서 수제 맥주와 와인을 즐기는 곳",
+    url: "https://www.namdalnriyou.com/night",
+    siteName: "이유 없는 밤 - The Night without Riyou",
+    images: [
+      {
+        url: "https://www.namdalnriyou.com/logo2.png",
+        width: 600,
+        height: 600,
+        alt: "이유 없는 밤 - The Night without Riyou",
+      },
+    ],
+    local: "ko_KR",
+    type: "website",
+    keyword:[
+      '디저트 카페',
+      '카페',
+      '산청 디저트 카페',
+      '산청 카페',
+      '산청 데이트 코스',
+      '산청 여행',
+      '산청 맛집',
+      '산청 코스',
+      '산청 여행지',
+      '남강 카페',
+      '원지 카페',
+      '산청 원지',
+      '산청 원지 카페',
+      '산청 원지 데이트',
+      '산청 원지 여행',
+      '산청 원지 드라이브',
+      '산청 드라이브',
+      '원지 카페',
+      '원지 데이트',
+      '원지 여행',
+      '산청 맥주',
+      '산청 와인',
+      '산청 수제 맥주',
+      '원지 수제 맥주',
+    ]
+  },
 };
 
 export default function Night() {
