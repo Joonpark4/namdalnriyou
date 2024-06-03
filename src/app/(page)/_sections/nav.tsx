@@ -26,6 +26,10 @@ export const NavigationComponent = ({
   const handleNightClick = () => {
     if (pathname === "/night") return;
     sendGTMEvent({ event: "click_btn", btn_name: "NightBtn" });
+    sendGTMEvent({
+      event: "conversion",
+      send_to: "AW-16458714781/SMJyCMT8p7YZEJ2dkKg9",
+    });
     router.push("/night");
   };
   return (
@@ -40,7 +44,7 @@ export const NavigationComponent = ({
       >
         <button
           className={cn(
-            "centered h-full w-full origin-top-left rounded-b-lg bg-[#f6f6e8] p-1 text-[#291e14] shadow-md btn",
+            "btn centered h-full w-full origin-top-left rounded-b-lg bg-[#f6f6e8] p-1 text-[#291e14] shadow-md",
             pathname === "/day" ? "z-30 scale-110 text-3xl" : "text-2xl",
           )}
           onClick={handleDayClick}
@@ -49,7 +53,7 @@ export const NavigationComponent = ({
         </button>
         <button
           className={cn(
-            "centered h-full w-full origin-top-right rounded-b-lg bg-[#262626] p-1 text-[#dadbd2] shadow-md btn",
+            "btn centered h-full w-full origin-top-right rounded-b-lg bg-[#262626] p-1 text-[#dadbd2] shadow-md",
             pathname === "/night" ? "z-30 scale-110 text-3xl" : "text-2xl",
           )}
           onClick={handleNightClick}
