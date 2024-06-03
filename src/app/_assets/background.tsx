@@ -82,7 +82,7 @@ export const BackgroundComponent = () => {
         <Image
           src={picNow}
           alt="day1"
-          className="w-full h-full brightness-75 sepia-[0.1]"
+          className="w-full h-full sepia-[0.1]"
           priority
         />
       </div>
