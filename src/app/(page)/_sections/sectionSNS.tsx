@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { SectionTitleGroupComponent } from "./sectionTitleGroup";
 import snsPic1 from "@/../public/sns1.jpeg";
@@ -7,7 +8,8 @@ import snsPic4 from "@/../public/sns4.jpeg";
 import snsPic5 from "@/../public/sns5.jpeg";
 import snsPic6 from "@/../public/sns6.jpeg";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { sendGTMEvent } from "@next/third-parties/google";
+import { SectionButtonComponent } from "./sectionButton";
 
 // TODO: SNS 아이콘과 함께 계정명 표시
 export const SectionSNSComponent = () => {
@@ -27,8 +29,16 @@ export const SectionSNSComponent = () => {
           ))}
         </div>
         <div className="flex justify-end">
-          <Link href={"https://www.instagram.com/namdalnriyou/"}>
-            <Button>인스타그램 더보기</Button>
+          <Link
+            href={"https://www.instagram.com/namdalnriyou/"}
+            onClick={() =>
+              sendGTMEvent({
+                event: "click_btn",
+                btn_name: "CheckInstagramBtn",
+              })
+            }
+          >
+            <SectionButtonComponent>인스타그램 더보기</SectionButtonComponent>
           </Link>
         </div>
       </div>

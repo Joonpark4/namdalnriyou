@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Yeon_Sung } from "next/font/google";
 import { useRouter, usePathname } from "next/navigation";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const Yeon = Yeon_Sung({ weight: "400", subsets: ["latin"], display: "swap" });
 
@@ -19,14 +20,18 @@ export const NavigationComponent = ({
 
   const handleDayClick = () => {
     if (pathname === "/day") return;
+    sendGTMEvent({ event: "click_btn", btn_name: "DayBtn" });
     router.push("/day");
   };
   const handleNightClick = () => {
     if (pathname === "/night") return;
+    sendGTMEvent({ event: "click_btn", btn_name: "NightBtn" });
     router.push("/night");
   };
   return (
-    <div className={cn(" z-20 sticky top-0 flex w-full flex-col", Yeon.className)}>
+    <div
+      className={cn(" sticky top-0 z-20 flex w-full flex-col", Yeon.className)}
+    >
       <nav
         className={cn(
           "z-20 flex items-start",

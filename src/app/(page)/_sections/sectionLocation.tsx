@@ -1,12 +1,13 @@
 "use client";
-import { useEffect } from "react";
 import { SectionTitleGroupComponent } from "./sectionTitleGroup";
 import Script from "next/script";
 import Link from "next/link";
+import { SectionButtonComponent } from "./sectionButton";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { Button } from "@/components/ui/button";
 
 export const SectionLocationComponent = () => {
-  const isitializeMap = () => {
+  const initializeMap = () => {
     const mapOptions = {
       center: new window.naver.maps.LatLng(35.3025826, 127.9693245),
       zoom: 15,
@@ -23,6 +24,10 @@ export const SectionLocationComponent = () => {
       map: map,
     });
   };
+  const handleCenterButtonClick = () => {
+    sendGTMEvent({ event: "click_btn", btn_name: "MapCenterBtn" });
+    initializeMap();
+  };
 
   return (
     <div className="flex w-full flex-col gap-5">
@@ -35,10 +40,10 @@ export const SectionLocationComponent = () => {
           <div id="map" style={{ width: "100%", height: "300px" }}></div>
           <Button
             variant={"outline"}
-            onClick={isitializeMap}
-            className="absolute right-1 top-1"
+            onClick={handleCenterButtonClick}
+            className="absolute text-black right-1 top-1"
           >
-            매장으로
+            매장찾기
           </Button>
         </div>
         <div className="flex justify-end">
@@ -47,8 +52,16 @@ export const SectionLocationComponent = () => {
               "https://map.naver.com/p/entry/place/1980392936?c=15.00,0,0,0,dh"
             }
             target="_blank"
+            onClick={() =>
+              sendGTMEvent({
+                event: "click_btn",
+                btn_name: "CheckNaverBtn",
+              })
+            }
           >
-            <Button>네이버 지도에서 찾기</Button>
+            <SectionButtonComponent>
+              네이버 지도에서 찾기
+            </SectionButtonComponent>
           </Link>
         </div>
       </div>
@@ -56,7 +69,7 @@ export const SectionLocationComponent = () => {
         strategy="afterInteractive"
         type="text/javascript"
         src={`https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}`}
-        onReady={isitializeMap}
+        onReady={initializeMap}
       />
       <div className="space-y-1">
         <h4 className="text-lg font-semibold">넓은 전용 주차장 완비</h4>
