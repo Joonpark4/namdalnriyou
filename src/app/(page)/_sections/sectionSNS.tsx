@@ -37,6 +37,7 @@ export const SectionSNSComponent = () => {
                 btn_name: "CheckInstagramBtn",
               })
             }
+            className="btn"
           >
             <SectionButtonComponent>인스타그램 더보기</SectionButtonComponent>
           </Link>

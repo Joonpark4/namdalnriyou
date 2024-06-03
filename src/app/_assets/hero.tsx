@@ -87,7 +87,7 @@ export const HeroComponent = () => {
                   key={index}
                   variant={"secondary"}
                   className={cn(
-                    "heroButton px-4 py-6 text-2xl hover:bg-[#f6f6e8] hover:text-[#2a1e14] xl:text-3xl",
+                    "heroButton px-4 py-6 text-2xl hover:bg-[#f6f6e8] hover:text-[#2a1e14] xl:text-3xl btn",
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
@@ -107,7 +107,7 @@ export const HeroComponent = () => {
                   key={index}
                   variant={"secondary"}
                   className={cn(
-                    "heroButton px-4 py-6 text-2xl hover:bg-[#262626] hover:text-[#dadbd2] xl:text-3xl",
+                    "heroButton px-4 py-6 text-2xl hover:bg-[#262626] hover:text-[#dadbd2] xl:text-3xl btn",
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}

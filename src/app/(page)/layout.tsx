@@ -70,7 +70,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <button
                   key={index}
                   className={cn(
-                    "SubButton centered hidden bg-[#262626] px-1 py-5 text-lg text-[#dadbd2] shadow-md writing-mode-vertical-lr clip-sub-menu hover:bg-[#f6f6e8] hover:text-[#291e14]",
+                    "SubButton centered hidden bg-[#262626] px-1 py-5 text-lg text-[#dadbd2] shadow-md writing-mode-vertical-lr clip-sub-menu hover:bg-[#f6f6e8] hover:text-[#291e14] btn",
                     pathname === "/night" ? "md:block" : "",
                     Yeon.className,
                     !isInView && "pointer-events-none",
@@ -91,7 +91,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <button
                   key={index}
                   className={cn(
-                    "SubButton centered  hidden bg-[#f6f6e8] px-1 py-5 text-lg text-[#291e14] shadow-md writing-mode-vertical-lr clip-sub-menu hover:bg-[#262626] hover:text-[#dadbd2]",
+                    "SubButton centered  hidden bg-[#f6f6e8] px-1 py-5 text-lg text-[#291e14] shadow-md writing-mode-vertical-lr clip-sub-menu hover:bg-[#262626] hover:text-[#dadbd2] btn",
                     pathname === "/day" ? "md:block" : "",
                     Yeon.className,
                     !isInView && "pointer-events-none",

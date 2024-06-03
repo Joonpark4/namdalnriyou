@@ -58,6 +58,7 @@ export const SectionLocationComponent = () => {
                 btn_name: "CheckNaverBtn",
               })
             }
+            className="btn"
           >
             <SectionButtonComponent>
               네이버 지도에서 찾기
