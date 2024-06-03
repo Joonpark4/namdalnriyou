@@ -10,6 +10,7 @@ import { animate, stagger, useInView } from "framer-motion";
 import { NavigationComponent } from "./_sections/nav";
 import { dayButtonArray, nightButtonArray } from "@/app/_assets/hero";
 import { Yeon_Sung } from "next/font/google";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const Yeon = Yeon_Sung({ weight: "400", subsets: ["latin"], display: "swap" });
 
@@ -17,7 +18,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const ref = useRef(null);
   const isInView = useInView(ref);
-
 
   const scrollToSection = (section: number) => {
     const target = document.getElementById(`${section}`);
@@ -70,13 +70,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <button
                   key={index}
                   className={cn(
-                    "SubButton writing-mode-vertical-lr clip-sub-menu centered hidden bg-[#262626] px-1 py-5 text-lg text-[#dadbd2] shadow-md hover:bg-[#f6f6e8] hover:text-[#291e14]",
+                    "SubButton centered hidden bg-[#262626] px-1 py-5 text-lg text-[#dadbd2] shadow-md writing-mode-vertical-lr clip-sub-menu hover:bg-[#f6f6e8] hover:text-[#291e14]",
                     pathname === "/night" ? "md:block" : "",
                     Yeon.className,
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
-                  onClick={() => scrollToSection(index + 1)}
+                  onClick={() => {
+                    scrollToSection(index + 1);
+                    sendGTMEvent({
+                      event: "click_btn",
+                      btn_name: `Night${button}Btn`,
+                    });
+                  }}
                 >
                   {button}
                 </button>
@@ -85,7 +91,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <button
                   key={index}
                   className={cn(
-                    "SubButton writing-mode-vertical-lr  clip-sub-menu centered hidden bg-[#f6f6e8] px-1 py-5 text-lg text-[#291e14] shadow-md hover:bg-[#262626] hover:text-[#dadbd2]",
+                    "SubButton centered  hidden bg-[#f6f6e8] px-1 py-5 text-lg text-[#291e14] shadow-md writing-mode-vertical-lr clip-sub-menu hover:bg-[#262626] hover:text-[#dadbd2]",
                     pathname === "/day" ? "md:block" : "",
                     Yeon.className,
                     !isInView && "pointer-events-none",
@@ -93,6 +99,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   style={{ opacity: 0 }}
                   onClick={() => {
                     scrollToSection(index + 1);
+                    sendGTMEvent({
+                      event: "click_btn",
+                      btn_name: `Day${button}Btn`,
+                    });
                   }}
                 >
                   {button}
@@ -103,7 +113,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <main
         className={cn(
           "w-[90%] translate-x-[5%] tracking-[-0.01em] duration-1000 md:w-[49%]",
-          pathname === "/night" ? "md:translate-x-[5%]" : "md:translate-x-[95%]",
+          pathname === "/night"
+            ? "md:translate-x-[5%]"
+            : "md:translate-x-[95%]",
         )}
       >
         <NavigationComponent

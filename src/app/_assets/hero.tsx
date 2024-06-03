@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Yeon_Sung } from "next/font/google";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const Yeon = Yeon_Sung({ weight: "400", subsets: ["latin"], display: "swap" });
 
@@ -90,7 +91,13 @@ export const HeroComponent = () => {
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
-                  onClick={() => scrollToSection(index + 1)}
+                  onClick={() => {
+                    scrollToSection(index + 1);
+                    sendGTMEvent({
+                      event: "click_btn",
+                      btn_name: `Night${button}Btn`,
+                    });
+                  }}
                 >
                   {button}
                 </Button>
@@ -104,7 +111,13 @@ export const HeroComponent = () => {
                     !isInView && "pointer-events-none",
                   )}
                   style={{ opacity: 0 }}
-                  onClick={() => scrollToSection(index + 1)}
+                  onClick={() => {
+                    scrollToSection(index + 1);
+                    sendGTMEvent({
+                      event: "click_btn",
+                      btn_name: `Day${button}Btn`,
+                    });
+                  }}
                 >
                   {button}
                 </Button>
