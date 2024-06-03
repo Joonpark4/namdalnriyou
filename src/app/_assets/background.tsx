@@ -42,7 +42,7 @@ export const BackgroundComponent = () => {
         }
         return newPic;
       });
-    }, 10000);
+    }, 11000);
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {
@@ -51,26 +51,26 @@ export const BackgroundComponent = () => {
     if (random === 0) {
       ani = animate(
         ".BGImage",
-        { x: [-40, 0], y: [0], opacity: [0, 1, 0.1] },
-        { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
+        { x: [-40, 0], y: [0], opacity: [0, 1, 0] },
+        { duration: 14, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else if (random === 1) {
       ani = animate(
         ".BGImage",
-        { x: [0, -40], y: [0], opacity: [0, 1, 0.1] },
-        { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
+        { x: [0, -40], y: [0], opacity: [0, 1, 0] },
+        { duration: 14, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else if (random === 2) {
       ani = animate(
         ".BGImage",
-        { x: [0], y: [0, -40], opacity: [0, 1, 0.1] },
-        { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
+        { x: [0], y: [0, -40], opacity: [0, 1, 0] },
+        { duration: 14, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     } else {
       ani = animate(
         ".BGImage",
-        { x: [0], y: [-40, 0], opacity: [0, 1, 0.1] },
-        { duration: 15, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
+        { x: [0], y: [-40, 0], opacity: [0, 1, 0] },
+        { duration: 14, ease: cubicBezier(0.0, 0.77, 0.67, 1.0) },
       );
     }
 
@@ -82,7 +82,7 @@ export const BackgroundComponent = () => {
         <Image
           src={picNow}
           alt="day1"
-          className="w-full h-full sepia-[0.1]"
+          className="w-full h-full"
           priority
         />
       </div>
