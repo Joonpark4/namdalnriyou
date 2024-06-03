@@ -4,6 +4,7 @@ import { BackgroundComponent } from "@/app/_assets/background";
 import { HeroComponent } from "./_assets/hero";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const Noto = Noto_Sans_KR({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default async function RootLayout({
         <SpeedInsights />
         <Analytics />
       </body>
+      <GoogleAnalytics gaId="G-XYZ" />
     </html>
   );
 }
