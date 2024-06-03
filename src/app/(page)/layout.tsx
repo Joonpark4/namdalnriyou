@@ -61,7 +61,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Image
           src={pathname === "/night" ? nightLogo : dayLogo}
           alt="logo"
-          className="SubLogo hidden aspect-square w-3/5 max-w-[500px] rounded-full md:block"
+          className="SubLogo hidden aspect-square w-3/5 max-w-[320px] rounded-full md:block"
           style={{ opacity: 0 }}
         />
         <div className="flex gap-4">
