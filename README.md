@@ -1,28 +1,25 @@
-# Project information
+# [Namdalnriyou](https://www.namdalnriyou.com/)
+- domain : https://www.namdalnriyou.com/
+- Name : Namdalnriyou (남다른 이유)
+- The landing web page for my fam's cafe
 
-- Name : Namdalnriyou
-- The landing web page for my family cafe
 
-# 프로젝트 정보
+## Deploy
+- Vercel
+- Vercel CI/CD
 
-# 참고한 소스
+## Core Library / Package
+- Next.js [14.2.3] : for SEO, easy cloude deployment in Vercel
+- Swiper : for image carousel
+- frame-motion : for the fancy animation effect
+- @next/third-parties : for analytics with GA / GTM
 
-```
-https://youtu.be/1SjqRn_Ira4?si=-ynF-u2mMFPRPz_w
-```
-
-## 포트
-
-#### localhost: 3000
+### External API
+- Naver Map API
 
 ### env
+```
+# NEXT_PUBLIC_NAVER_CLIENT_ID
+# NEXT_PUBLIC_NAVER_CLIENT_SECRET
+```
 
-```
-# 없음
-```
-
-### 외부 api 사용
-
-```
-# 없음
-```
