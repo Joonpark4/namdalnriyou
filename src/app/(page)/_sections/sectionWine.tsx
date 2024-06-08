@@ -1,5 +1,7 @@
 import { SectionTitleGroupComponent } from "./sectionTitleGroup";
 import Wine1 from "@/../public/wine1.jpg";
+import Wine2 from "@/../public/wine2.jpeg";
+import Wine3 from "@/../public/wine3.jpeg";
 import Image from "next/image";
 
 export const SectionWineComponent = () => {
@@ -18,13 +20,13 @@ export const SectionWineComponent = () => {
             className="aspect-square w-full object-fill"
           />
           <Image
-            src={Wine1}
+            src={Wine2}
             alt="Macaron2"
             height={200}
             className="aspect-square w-full object-fill"
           />
           <Image
-            src={Wine1}
+            src={Wine2}
             alt="Macaron3"
             height={200}
             className="aspect-square w-full object-fill"
