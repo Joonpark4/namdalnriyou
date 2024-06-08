@@ -16,19 +16,19 @@ export const SectionWineComponent = () => {
           <Image
             src={Wine1}
             alt="Macaron1"
-            height={200}
+            height={300}
             className="aspect-square w-full object-fill"
           />
           <Image
             src={Wine2}
             alt="Macaron2"
-            height={200}
+            height={300}
             className="aspect-square w-full object-fill"
           />
           <Image
             src={Wine3}
             alt="Macaron3"
-            height={200}
+            height={300}
             className="aspect-square w-full object-fill"
           />
         </div>
