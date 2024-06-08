@@ -26,7 +26,7 @@ export const SectionWineComponent = () => {
             className="aspect-square w-full object-fill"
           />
           <Image
-            src={Wine2}
+            src={Wine3}
             alt="Macaron3"
             height={200}
             className="aspect-square w-full object-fill"
